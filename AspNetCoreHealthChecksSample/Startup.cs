@@ -45,13 +45,13 @@ namespace AspNetCoreHealthChecksSample
             services.AddRazorPages();
 
             services.AddHealthChecks()
-                .AddCheck<ExampleHealthCheck>("example_health_check")
-                .AddDbContextCheck<ApplicationDbContext>()
+                .AddCheck<WeatherForecastHealthCheck>("Weather Forecasts")
+                .AddDbContextCheck<ApplicationDbContext>("Database")
                 .AddSmtpHealthCheck(options =>
                 {
                     options.Host = "localhost";
                     options.Port = 25;
-                });
+                }, name: "SMTP");
 
             services.AddHealthChecksUI()
                 .AddInMemoryStorage();

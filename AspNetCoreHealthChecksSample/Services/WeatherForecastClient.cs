@@ -22,7 +22,7 @@ namespace AspNetCoreHealthChecksSample.Services
 
         public bool IsHealthy()
         {
-            return false;
+            return true;
         }
 
         public IEnumerable<WeatherForecast> Get()

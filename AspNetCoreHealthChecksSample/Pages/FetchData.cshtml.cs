@@ -14,11 +14,14 @@ namespace AspNetCoreHealthChecksSample.Pages
             _client = client;
         }
 
-        public IEnumerable<WeatherForecast> Forecasts { get; set; }
+        public IEnumerable<WeatherForecast> Forecasts { get; set; } = new List<WeatherForecast>();
 
         public void OnGet()
         {
-            Forecasts = _client.Get();
+            if (_client.IsHealthy())
+            {
+                Forecasts = _client.Get();
+            }
         }
     }
 }
