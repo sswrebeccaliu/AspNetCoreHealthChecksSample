@@ -94,7 +94,10 @@ namespace AspNetCoreHealthChecksSample
                         [HealthStatus.Unhealthy] = StatusCodes.Status503ServiceUnavailable
                     }
                 });
-                endpoints.MapHealthChecksUI();
+                endpoints.MapHealthChecksUI(options =>
+                {
+                    options.AddCustomStylesheet("wwwroot\\css\\healthchecks-ui.css");
+                });
             });
         }
     }
