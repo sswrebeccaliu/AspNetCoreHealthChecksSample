@@ -1,8 +1,11 @@
 ﻿:root {
-    --primaryColor: #68217a;
-    --secondaryColor: #f4f4f4;
-    --bgMenuActive: #8e47a0;
-    --bgButton: #68217a;
+--primaryColor: #666666;
+--secondaryColor: #cc4141;
+--dangerColor: #CC4141;
+--warningColor: #F7941D;
+--successColor: #8DC63F;
+    --bgMenuActive: #666666;
+    --bgButton: #333333;
     --logoImageUrl: url('https://www.ssw.com.au/ssw/logo/ssw/images/ssw-logo.png');
     --bgAside: var(--primaryColor);
 }
