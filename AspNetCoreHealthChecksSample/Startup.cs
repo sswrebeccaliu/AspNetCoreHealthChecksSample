@@ -17,6 +17,7 @@ using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Http;
 using AspNetCoreHealthChecksSample.HealthChecks;
+using HealthChecks.UI.Client;
 
 namespace AspNetCoreHealthChecksSample
 {
@@ -84,6 +85,8 @@ namespace AspNetCoreHealthChecksSample
                 endpoints.MapRazorPages();
                 endpoints.MapHealthChecks("/health", new HealthCheckOptions()
                 {
+                    Predicate = _ => true,
+                    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse,
                     ResultStatusCodes =
                     {
                         [HealthStatus.Healthy] = StatusCodes.Status200OK,
